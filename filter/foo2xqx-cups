@@ -1,0 +1,31 @@
+#!/bin/sh
+# CUPS filter shim for HP LaserJet M1005 MFP.
+# Self-contained: runs foo2xqx-wrapper + bundled Ghostscript (gsbundle/) + gsed,
+# all installed alongside this file, so it works inside the macOS print-filter
+# sandbox (no /usr/local or Homebrew access needed).
+# CUPS calls: <filter> job-id user title copies options [filename]
+#
+# The install directory is fixed; CUPS passes a bare argv[0] with CWD "/", so we
+# must NOT derive it from $0. FOO2XQX_DIR lets us override it for local testing.
+
+DIR="${FOO2XQX_DIR:-/usr/libexec/cups/filter}"
+export FOO2XQX_DIR="$DIR"
+
+OPTIONS=" $5 "
+COPIES="${4:-1}"
+
+PAPER=9   # default A4
+case "$OPTIONS" in
+  *PageSize=Letter*|*media=*letter*)       PAPER=1 ;;
+  *PageSize=Legal*|*media=*legal*)         PAPER=5 ;;
+  *PageSize=Executive*|*media=*executive*) PAPER=7 ;;
+  *PageSize=A4*|*media=*a4*)               PAPER=9 ;;
+  *PageSize=A5*|*media=*a5*)               PAPER=11 ;;
+  *PageSize=B5*|*media=*b5*)               PAPER=13 ;;
+esac
+
+if [ -n "$6" ]; then
+  exec "$DIR/foo2xqx-wrapper" -p"$PAPER" -n"$COPIES" < "$6"
+else
+  exec "$DIR/foo2xqx-wrapper" -p"$PAPER" -n"$COPIES"
+fi
