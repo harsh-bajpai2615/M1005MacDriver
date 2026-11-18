@@ -1,5 +1,5 @@
 #!/bin/bash
-# HP LaserJet M1005 MFP driver for Apple Silicon macOS — portable installer.
+# HP LaserJet M1005 MFP driver for Apple Silicon macOS: portable installer.
 # Self-contained: bundles the foo2xqx driver, Ghostscript, and GNU sed.
 # No Homebrew or other tools required on this machine.
 #
@@ -64,6 +64,6 @@ if printf '%s' "$JLOG" | grep -qi "not permitted\|Filter failed\|status 12\|not 
   echo "sandbox is stricter. Run the included fallback, then try printing again:"
   echo "    sudo ./allow-sandbox.sh"
 else
-  echo "SUCCESS — the test page was sent to the printer and should be printing now."
+  echo "SUCCESS: the test page was sent to the printer and should be printing now."
   echo "The M1005 is set as the default printer. Just print normally from any app."
 fi
