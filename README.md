@@ -7,10 +7,10 @@ HP never shipped one that runs on today's macOS — this is a one-command instal
 
 ![platform](https://img.shields.io/badge/platform-macOS%20(Apple%20Silicon)-000?logo=apple)
 ![driver](https://img.shields.io/badge/driver-foo2zjs%2Ffoo2xqx-5B5BD6)
-![release](https://img.shields.io/github/v/release/harsh-bajpai2615/hp-m1005-macos-driver?color=5B5BD6)
+![release](https://img.shields.io/github/v/release/harsh-bajpai2615/M1005MacDriver?color=5B5BD6)
 ![license](https://img.shields.io/badge/license-GPL--2.0-16A34A)
 
-[**⬇ Download the installer**](https://github.com/harsh-bajpai2615/hp-m1005-macos-driver/releases/latest) · [Requirements](#requirements) · [Install](#install) · [How it works](#how-it-works) · [Troubleshooting](#troubleshooting)
+[**⬇ Download the installer**](https://github.com/harsh-bajpai2615/M1005MacDriver/releases/latest) · [Requirements](#requirements) · [Install](#install) · [How it works](#how-it-works) · [Troubleshooting](#troubleshooting)
 
 </div>
 
@@ -31,7 +31,7 @@ This package solves all of that once. Everything the printer needs is compiled, 
 
 **Option A — download the installer (recommended)**
 
-1. [Download the latest release](https://github.com/harsh-bajpai2615/hp-m1005-macos-driver/releases/latest) and unzip it.
+1. [Download the latest release](https://github.com/harsh-bajpai2615/M1005MacDriver/releases/latest) and unzip it.
 2. Open **Terminal**, `cd` into the unzipped folder, and run:
 
    ```bash
@@ -41,7 +41,7 @@ This package solves all of that once. Everything the printer needs is compiled, 
 **Option B — clone the repo**
 
 ```bash
-git clone https://github.com/harsh-bajpai2615/hp-m1005-macos-driver.git
+git clone https://github.com/harsh-bajpai2615/M1005MacDriver.git
 cd hp-m1005-macos-driver
 sudo ./setup.sh
 ```
